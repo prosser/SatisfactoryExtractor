@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Rosser.SatisfactoryExtractor</RootNamespace>
+    <AssemblyName>Rosser.SatisfactoryExtractor</AssemblyName>
+    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Description>Satisfactory game assets extractor</Description>
+    <PackageTags>satisfactory;icons;json</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <LangVersion>10</LangVersion>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <Import Project="..\..\NuGetPackage.props" />
+
+  <ItemGroup>
+    <PackageReference Include="Gameloop.Vdf.JsonConverter" Version="0.2.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SatisfactoryExtractor.Resources\SatisfactoryExtractor.Resources.csproj" />
+  </ItemGroup>
+
+</Project>

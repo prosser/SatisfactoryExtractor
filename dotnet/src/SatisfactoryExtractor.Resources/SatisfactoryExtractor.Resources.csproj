@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Rosser.SatisfactoryExtractor.Resources</RootNamespace>
+    <AssemblyName>Rosser.SatisfactoryExtractor.Resources</AssemblyName>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+    <Description>Satisfactory game assets extractor resources</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <Import Project="..\..\NuGetPackage.props" />
+  
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\..\bin\umodel\linux\umodel" Link="linux\umodel" />
+    <EmbeddedResource Include="..\..\..\bin\umodel\windows\umodel_64.exe" Link="windows\umodel_64.exe" />
+    <EmbeddedResource Include="..\..\..\bin\umodel\windows\umodel.cfg" Link="windows\umodel.cfg" />
+    <EmbeddedResource Include="..\..\..\bin\umodel\windows\SDL2_64.dll" Link="windows\SDL2_64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ErrorStrings.Designer.cs">
+      <DependentUpon>ErrorStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ErrorStrings.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>ErrorStrings.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

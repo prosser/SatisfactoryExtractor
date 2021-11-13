@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExtractSatisfactoryAssets": {
+      "commandName": "Project",
+      "commandLineArgs": "-o c:\\temp\\extracted"
+    }
+  }
+}

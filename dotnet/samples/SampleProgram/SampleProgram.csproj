@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rosser.SatisfactoryExtractor" Version="1.0.0-prerelease1" IncludeAssets="all" />
+    <PackageReference Include="Rosser.SatisfactoryExtractor.Resources" Version="1.0.0-prerelease1" IncludeAssets="all" />
+  </ItemGroup>
+</Project>

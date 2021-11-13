@@ -1,0 +1,8 @@
+.vscode/
+.*
+src/
+bin/
+test/
+**/*.ts
+!**/*.d.ts
+!bin/

@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "satisfactory-extractor",
+  "version": "0.0.1",
+  "description": "Satisfactory Game Assets Extractor",
+  "repository": "https://github.com/prosser/SatisfactoryExtractor.git",
+  "author": "Peter Rosser <prosser@live.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "umodel": "./bin/umodel/linux/umodel",
+    "umodel_64.exe": "./bin/umodel/win32/umodel_64.exe"
+  },
+  "scripts": {
+    "clean": "ts-node bin/clean.ts",
+    "create-package": "yarn clean && tsc && ts-node bin/copy-bin.ts && ts-node bin/create-package.ts",
+    "build": "tsc && ts-node bin/copy-bin.ts",
+    "watch": "tsc --watch",
+    "extract": "ts-node test/extract-game-assets.ts"
+  },
+  "os": [
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "dependencies": {
+    "@node-steam/vdf": "^2.2.0",
+    "@types/minimist": "^1.2.2",
+    "minimist": "^1.2.5",
+    "registry-js": "^1.15.1",
+    "sharp": "^0.29.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/sharp": "^0.29.3",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "directories": {
+    "extraFiles": [
+      {
+        "from": "bin/${os}",
+        "to": "dist/bin",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  }
+}

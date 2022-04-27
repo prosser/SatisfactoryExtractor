@@ -24,7 +24,7 @@ Add the following script to, or to an existing script in, your `packages.json`:
         "extract-satisfactory": "ts-node "
     }
 }
-`
+```
 
 ### .NET Core 3.1 or .NET 6.0 (Linux or Windows)
 
